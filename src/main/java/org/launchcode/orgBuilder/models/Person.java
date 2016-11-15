@@ -17,6 +17,7 @@ import javax.validation.constraints.NotNull;
 public class Person extends AbstractEntity{
 	private String firstName, lastName, suffix, prefix;
 	private int phoneNumber;
+	private String email;
 	private List<Address> addresses;
 	private List<Tag> tags; //Binary either that are or aren't
 	private List<Response> responses; //could be multiple things, can change over time
@@ -75,6 +76,15 @@ public class Person extends AbstractEntity{
 
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+	
+	@Column(name="email")
+	public String getEmail() {
+		return this.email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	@Column(name="date_created")
