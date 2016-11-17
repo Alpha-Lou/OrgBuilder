@@ -6,7 +6,7 @@
 
 	<div th:replace="template :: navigation"></div>
 	<span class="error" th:text="${error}"></span>
-	<!--  This should be a form to add a person to the database -->
+	<!-- This should be a form to search for a person -->
 	<form>
 		<div class="input_fields" id="name_fields">
 			<input type="text" name="prefix" placeholder="Prefix"/>
@@ -27,25 +27,12 @@
 			<input type="text" name="state" placeholder="State"/>
 			<input type="text" name="zipcode" placeholder="Zipcode"/>
 		</div>
-		
-		<div class="input_fields" id="tag_fields">
-			<!-- 
-				drop down to select an active tag
-				
-				how do i make it so you can select and add multiple tags?
-			 -->
-		</div>
-		
-		<div class="input_fields" id="question_fields">
-			<!-- 
-				drop down to select an active question
-				pick a question then a drop down with possible answers should appear
-				
-				how do i make it so you can select and add multiple Question/Answers?
-			 -->
-		</div>
-		
 	</form>
+	
+	
+	<div class="search_results" id="search_results">
+		<!-- iterate through results and show them here -->
+	</div>
 
 </body>
 </html>
