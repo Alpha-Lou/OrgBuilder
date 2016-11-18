@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -45,8 +46,21 @@ public class Answer extends AbstractEntity{
 	}
 	
 	@OneToMany
-	public List<Response> getResponse() {
+	@JoinColumn(name = "answer_uid")
+	public List<Response> getResponses() {
 		return responses;
+	}
+
+	public void setResponses(List<Response> responses) {
+		this.responses = responses;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
 	}
 	
 }

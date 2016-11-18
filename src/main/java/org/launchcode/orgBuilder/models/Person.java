@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -102,20 +101,40 @@ public class Person extends AbstractEntity{
 	}
 
 	@OneToMany
-	@JoinColumn(name = "respondent_id")
+	@JoinColumn(name = "respondent_uid")
 	public List<Response> getResponses() {
 		return responses;
 	}
 	
 	@OneToMany
-	@JoinColumn(name = "respondent_id")
+	@JoinColumn(name = "respondent_uid")
 	public List<Tag> getTags() {
 		return tags;
 	}
 	
 	@ManyToMany
-	@JoinTable(name = "person_address", joinColumns={@JoinColumn(name="person_id")}, inverseJoinColumns={@JoinColumn(name="address_id")})
 	public List<Address> getAddresses() {
 		return addresses;
 	}
+
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
+	public void setResponses(List<Response> responses) {
+		this.responses = responses;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public void setEdited(Date edited) {
+		this.edited = edited;
+	}
+
 }

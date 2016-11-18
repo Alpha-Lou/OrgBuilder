@@ -46,4 +46,8 @@ public class Tag extends AbstractEntity {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public void setCreated(Date created) {
+		this.created = created;
+	}
 }

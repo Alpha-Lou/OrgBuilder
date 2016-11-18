@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="questions")
+@Table(name="responses")
 public class Response extends AbstractEntity {
 	private String name;
 	private Date created;
@@ -57,5 +57,21 @@ public class Response extends AbstractEntity {
 	@ManyToOne
 	public Person getRespondent() {
 		return respondent;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
+	public void setAnswer(Answer answer) {
+		this.answer = answer;
+	}
+
+	public void setRespondent(Person respondent) {
+		this.respondent = respondent;
 	}
 }

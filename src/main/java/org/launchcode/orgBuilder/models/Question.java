@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "responses")
+@Table(name = "questions")
 public class Question extends AbstractEntity {
 	private String title;
 	private Date created;
@@ -43,15 +43,27 @@ public class Question extends AbstractEntity {
 	}
 
 	@OneToMany
-	@JoinColumn(name = "question_id")
+	@JoinColumn(name = "question_uid")
 	public List<Response> getResponses() {
 		return responses;
 	}
 	
 	@OneToMany
-	@JoinColumn(name = "answer_id")
+	@JoinColumn(name = "answer_uid")
 	public List<Answer> getAnswers() {
 		return answers;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public void setResponses(List<Response> responses) {
+		this.responses = responses;
+	}
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
 	}
 	
 }

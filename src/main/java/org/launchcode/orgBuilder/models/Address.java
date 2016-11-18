@@ -67,4 +67,12 @@ public class Address extends AbstractEntity{
 	public List<Person> getResidents() {
 		return residents;
 	}
+
+	public void setResidents(List<Person> residents) {
+		this.residents = residents;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
 }
