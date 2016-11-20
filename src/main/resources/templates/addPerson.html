@@ -7,12 +7,12 @@
 	<div th:replace="template :: navigation"></div>
 	<span class="error" th:text="${error}"></span>
 	<!--  This should be a form to add a person to the database -->
-	<form>
+	<form method="post">
 		<div class="input_fields" id="name_fields">
-			<input type="text" name="prefix" placeholder="Prefix"/>
+			<input class="shortInput" type="text" name="prefix" placeholder="Prefix"/>
 			<input type="text" name="firstName" placeholder="First name"/>
 			<input type="text" name="lastName" placeholder="Last name"/>
-			<input type="text" name="suffix" placeholder="Suffix"/>
+			<input class="shortInput" type="text" name="suffix" placeholder="Suffix"/>
 		</div>
 		
 		<div class="input_fields" id="contact_fields">
@@ -21,11 +21,11 @@
 		</div>
 		
 		<div class="input_fields" id="address_fields">
-			<input type="text" name="street" placeholder="Street"/>
+			<input class="longInput" type="text" name="street" placeholder="Street"/>
 			<br/>
 			<input type="text" name="city" placeholder="City"/>
-			<input type="text" name="state" placeholder="State"/>
-			<input type="text" name="zipcode" placeholder="Zipcode"/>
+			<input class="shortInput" type="text" name="state" placeholder="State"/>
+			<input class="shortInput" type="text" name="zipcode" placeholder="Zipcode"/>
 		</div>
 		
 		<div class="input_fields" id="tag_fields">
@@ -44,6 +44,8 @@
 				how do i make it so you can select and add multiple Question/Answers?
 			 -->
 		</div>
+		
+		<input type="submit" value="Save Person"></input>
 		
 	</form>
 

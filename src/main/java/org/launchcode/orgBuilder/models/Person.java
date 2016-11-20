@@ -1,5 +1,6 @@
 package org.launchcode.orgBuilder.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,9 +18,9 @@ public class Person extends AbstractEntity{
 	private String firstName, lastName, suffix, prefix;
 	private int phoneNumber;
 	private String email;
-	private List<Address> addresses;
-	private List<Tag> tags; //Binary either that are or aren't
-	private List<Response> responses; //could be multiple things, can change over time
+	private List<Address> addresses = new ArrayList<Address>();
+	private List<Tag> tags = new ArrayList<Tag>();; //Binary either they are or aren't
+	private List<Response> responses = new ArrayList<Response>();; //could be multiple things, can change over time
 	private Date created, edited;
 	
 	public Person(String firstName, String lastName){

@@ -1,5 +1,6 @@
 package org.launchcode.orgBuilder.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "addresses")
 public class Address extends AbstractEntity{
 	private String street, city, state, zipcode;
-	private List<Person> residents;
+	private List<Person> residents = new ArrayList<Person>();
 	private Date created;
 	
 	public Address() {
