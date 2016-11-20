@@ -87,4 +87,28 @@ public class EntryController extends AbstractController {
 		
 	}
 
+	@RequestMapping(value = "/addQuestion", method = RequestMethod.GET)
+	public String newQuestionForm() {
+		
+		return "newQuestion";
+	}
+	
+	@RequestMapping(value = "/addQuestion", method = RequestMethod.POST)
+	public String newQuestion(HttpServletRequest request, Model model) {
+		//String title = request.getParameter("title");
+		
+		return "newQuestion";
+	}
+	
+	@RequestMapping(value = "/addTag", method = RequestMethod.GET)
+	public String newTagForm() {
+		
+		return "newQuestion";
+	}
+	
+	@RequestMapping(value = "/addTag", method = RequestMethod.POST)
+	public String newTag(HttpServletRequest request, Model model) {
+		
+		return "newQuestion";
+	}
 }
