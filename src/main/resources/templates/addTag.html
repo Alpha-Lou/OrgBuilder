@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="template :: dochead">
+</head>
+<body>
+
+	<div th:replace="template :: navigation"></div>
+	<span class="error" th:text="${error}"></span>
+	<!--  This should be a form to add a tag to the database -->
+	<form method="post">
+		<div class="input_fields">
+			<input type="text" name="label" placeholder="Tag Name"/>
+			<input type="text" name="description" placeholder="Description"/>
+		</div>
+		
+		<input type="submit" value="Save"></input>
+	</form>
+
+</body>
+</html>

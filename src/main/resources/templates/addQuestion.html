@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="template :: dochead">
+</head>
+<body>
+
+	<div th:replace="template :: navigation"></div>
+	<span class="error" th:text="${error}"></span>
+	<!--  This should be a form to add a question to the database -->
+	<form method="post">
+		<div class="input_fields">
+			<input type="text" name="title" placeholder="Question"/>
+		</div>
+		
+		<div>
+		<!-- 
+			add and show answers to question 
+			- When answer is submitted add to list and make new fields
+		-->
+			<input type="text" id="ans_value" name="ans_value" placeholder="Question"/>
+			<a href="#" id="Add" onclick="">Add Answer</a>
+		</div>
+		
+		<input type="submit" value="Save"></input>
+	</form>
+
+</body>
+</html>
