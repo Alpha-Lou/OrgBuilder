@@ -18,6 +18,8 @@ public class Question extends AbstractEntity {
 	private List<Response> responses; // how someone actually responds
 	private List<Answer> answers; //possible responses
 	
+	public Question() {}
+	
 	public Question(String title, List<Answer> answers) {
 		super();
 		

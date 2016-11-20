@@ -13,6 +13,8 @@ public class Tag extends AbstractEntity {
 	private String label, description;
 	private Date created;
 	
+	public Tag() {};
+	
 	public Tag(String label, String description) {
 		super();
 		

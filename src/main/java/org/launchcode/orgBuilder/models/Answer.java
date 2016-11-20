@@ -19,6 +19,8 @@ public class Answer extends AbstractEntity{
 	private Question question;
 	private List<Response> responses;
 	
+	public Answer() {}
+	
 	public Answer(String value) {
 		super();
 		this.value = value;
