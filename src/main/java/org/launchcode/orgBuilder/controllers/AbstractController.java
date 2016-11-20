@@ -1,5 +1,8 @@
 package org.launchcode.orgBuilder.controllers;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.servlet.http.HttpSession;
 
 import org.launchcode.orgBuilder.models.User;
@@ -48,4 +51,19 @@ public abstract class AbstractController {
     	session.setAttribute(userSessionKey, user.getUid());
     }
 	
+	public static boolean exists(String value) {
+		/*
+		 *  Static method to ensure Strings are not made of spaces
+		 *  or empty
+		 */
+		
+		if (value.equals("") || value == null) {
+			return false;
+		}
+		
+		Pattern validString = Pattern.compile("^ *$");
+		Matcher matcher = validString.matcher(value);
+		
+		return matcher.matches();
+	}
 }
