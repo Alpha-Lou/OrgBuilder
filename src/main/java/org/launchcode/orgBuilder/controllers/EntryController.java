@@ -21,52 +21,52 @@ public class EntryController extends AbstractController {
 	public String newPerson(HttpServletRequest request, Model model) {
 		
 		// get all the arguments
-		String prefix = request.getParameter("firstName");
+		String prefix = request.getParameter("prefix");
 		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("firstName");
-		String suffix = request.getParameter("firstName");
-		String phoneNumber = request.getParameter("firstName");
-		String email = request.getParameter("firstName");
-		String street = request.getParameter("firstName");
-		String city = request.getParameter("firstName");
-		String state = request.getParameter("firstName");
-		String zipcode = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String suffix = request.getParameter("suffix");
+		String phoneNumber = request.getParameter("phone");
+		String email = request.getParameter("email");
+		String street = request.getParameter("street");
+		String city = request.getParameter("city");
+		String state = request.getParameter("state");
+		String zipcode = request.getParameter("zipcode");
 		
 		// lets make a person!
 		if (firstName != null && lastName != null) {
 			Person newPerson = new Person(firstName, lastName);
-			if (prefix != null) {
+			if (exists(prefix)) {
 				newPerson.setPrefix(prefix);
 			}
 			
-			if (suffix != null) {
+			if (exists(suffix)) {
 				newPerson.setSuffix(suffix);
 			}
 			
-			if (phoneNumber != null) {
-				//newPerson.setPhoneNumber(Integer.parseInt(phoneNumber));
+			if (exists(phoneNumber)) {
+				newPerson.setPhoneNumber(Integer.parseInt(phoneNumber));
 			}
 			
-			if (email != null) {
+			if (exists(email)) {
 				newPerson.setEmail(email);
 			}
 			
-			if (street != null || city != null || state != null || zipcode != null) {
+			if (exists(street) || exists(city) || exists(state) || exists(zipcode)) {
 				Address address = new Address();
 				
-				if (street != null) {
+				if (exists(street)) {
 					address.setStreet(street);
 				}
 				
-				if (city != null) {
+				if (exists(city)) {
 					address.setCity(city);
 				}
 				
-				if (state != null) {
+				if (exists(state)) {
 					address.setState(state);
 				}
 				
-				if (zipcode != null) {
+				if (exists(zipcode)) {
 					address.setZipcode(zipcode);
 				}
 				
